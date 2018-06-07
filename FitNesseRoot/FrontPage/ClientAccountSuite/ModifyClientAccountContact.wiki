@@ -1,0 +1,14 @@
+---
+Help: Modifying Master tab Contact drop down elements
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| ClientAccountTest                                                                                                                                                                                                                        |
+|browser|resolution|clientAccountPage|clientAddress|clientContact|clientPhone|clientAdvisorCode|clientClearingManager|modifyClientAddress?|modifyClientContact?|modifyClientPhone?|modifyAdvisorCode?|modifyClearingManager?|closeWebDriver?|
+|chrome |1600x1024 |TESTDS13         |aDdReSS_123  |yest_contact |123456789  |MMC              |GWH                  |true                |true                |true              |true              |true                  |true           |
+|chrome |1366x768  |TESTDS13         |aDdReSS_123  |yest_contact |123456789  |MMC              |GWH                  |true                |true                |true              |true              |true                  |true           |

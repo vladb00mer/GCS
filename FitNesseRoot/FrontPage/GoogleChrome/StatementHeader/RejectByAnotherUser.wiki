@@ -1,0 +1,36 @@
+---
+Test
+---
+'''SUMMARY:''' Reject new statement header by another user
+
+'''STEPS'''
+
+|Comment                                                                                                   |
+|'''ID'''|'''TEST'''                                         |'''EXPECTED RESULT'''                        |
+|1.      |Navigate to "Static / Reporting / Statement Header"|System displays advisers main screen         |
+|2.      |Click Add new statement header icon                |System displays new statement header screen  |
+|3.      |Fill all required fields                           |Pass                                         |
+|4.      |Click Save button                                  |Pass                                         |
+|5.      |Change iv-user                                     |Pass                                         |
+|6.      |Select created statement header                    |Pass                                         |
+|7.      |Click Reject button                                |Pass                                         |
+|8.      |Check data                                         |Pass                                         |
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                                  |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.statementheaderscreen|
+
+'''TESTS'''
+
+!|StatementHeader|
+|browser|resolution|user |statementHeaderSearchPage|stHeaderValue|addressValue          |clickNewStHeader?|inputStHeader?|inputAddress?|clickSaveButton?|checkSuccessMessage?  |closeDriver?|
+|chrome |1600x1024 |tomas|				           |ST7          |MACQUARIE BANK LIMITED|true             |true          |true         |true            |Statement header saved|true        |
+
+!|StatementHeader|
+|browser|resolution|user |statementHeaderSearchPage|stHeaderValue|addressValue          |selectStHeaderRecord?|checkStHeaderSelector?|checkStHeader?|checkAddressPending?  |checkStHeaderStatus?|clickRejectBtn?|checkRejectMessage?      |checkStHeaderSelector? |checkNewStHeaderBtn?|closeDriver?|
+|chrome |1600x1024 |test |				           |ST7          |MACQUARIE BANK LIMITED|true                 |ST7                   |ST7           |MACQUARIE BANK LIMITED|unauthorised        |true           |Statement header rejected|Select statement header|true                |true        |  

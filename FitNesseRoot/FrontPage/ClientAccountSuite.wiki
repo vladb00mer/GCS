@@ -1,0 +1,45 @@
+---
+Help: This is automated test suite for Client Account
+---
+!***> '''Modification tests:'''
+
+'''Client Account Master tab Contact modification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.ModifyClientAccountContact
+
+'''Client Account Master tab Client details modification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.ModifyClientAccountClientDetails
+
+'''Client Account Master tab Account type modification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.ModifyClientAccountType
+
+'''Client Account Master tab Tax modification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.ModifyClientAccountTax
+
+'''Client Account Master tab Closeouts modification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.ModifyClientAccountCloseouts
+
+'''Client Account Master tab Balances modification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.ModifyClientAccountBalances
+
+'''Client Account Master tab Reporting modification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.ModifyClientAccountReporting
+
+'''Client Account Tax file number tab modification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.ModifyClientAccountTaxFileNumber
+
+*!
+!***> '''Verification tests:'''
+
+'''Client Account opening test:''' http://localhost:4444/FrontPage.ClientAccountSuite.OpenClientAccountTest
+
+'''Client Account header verification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.VerifyClientAccountHeader
+
+'''Client Account Master tab Contact verification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.VerifyClientAccountContact
+
+'''Client Account Master tab Client details verification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.VerifyClientAccountClientDetails
+
+'''Client Account Master tab Account type verification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.VerifyClientAccountType
+
+'''Client Account Master tab Tax verification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.VerifyClientAccountTax
+
+'''Client Account Master tab Closeouts verification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.VerifyClientAccountCloseouts
+
+'''Client Account Master tab Balances verification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.VerifyClientAccountBalances
+
+'''Client Account Master tab Reporting verification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.VerifyClientAccountReporting
+
+'''Client Account Tax file number tab verification test:''' http://localhost:4444/FrontPage.ClientAccountSuite.VerifyClientAccountTaxFileNumber
+
+*!

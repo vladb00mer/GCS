@@ -1,0 +1,14 @@
+---
+Help: Verifying Master tab Cascading Contracts drop down elements
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| CascadingContractsAccordeonTest                                                                                                                                                                |
+|browser|resolution|cascadingContractsAccordeon|index|cascadingContract|cascadePriceType|contractType        |verifyCascadingContract?|verifyCascadePriceType?|verifyContractType?|closeWebDriver?|
+|chrome |1366x768  |0B                         |1    |false            |Settlement price|Select contract type|true                    |true                   |true               |true           |
+|chrome |1600x1024 |0B                         |1    |false            |Settlement price|Select contract type|true                    |true                   |true               |true           |

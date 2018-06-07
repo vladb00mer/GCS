@@ -1,0 +1,36 @@
+---
+Help: Instrument Static Master tab Pricing accordeon modification
+Test
+---
+'''SUMMARY:''' Test is about Instrument Static Master tab Pricing accordeon modification
+
+'''STEPS'''
+
+|Comment                                                                            |
+|'''ID'''|'''TEST'''                           |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Instrument"    |Instrument search page shown        |
+|2.      |Make any search                      |Search result table updated         |
+|3.      |Click on first table record link     |Instrument page Master tab is opened|
+|4.      |Modify all existing fields in Pricing|Values are modified                 |
+|5.      |Navigate to "Static / Instrument"    |Instrument search page shown        |
+|6.      |Make any search                      |Search result table updated         |
+|7.      |Click on first table record link     |Instrument page Master tab is opened|
+|8.      |Verify all existing fields in Pricing|Values are verified                 |
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                   |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen|
+
+'''TESTS'''
+
+!|PricingAccordeonTest                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+|browser|resolution|user |pricingAccordeon|futuresMinPriceFluctuation|futuresTickBase|futuresTickValue|futuresPriceVarianceAllowed|priceInversion|couponRate|daysInYear|daysInTerm|optionsMinPriceFluctuation|optionsTickBase|optionsTickValue|optionsPriceVarianceAllowed|contractValCalcMethod|noOfYears|termsPerYear|modifyFuturesMinPriceFluctuation?|modifyFuturesTickBase?|modifyFuturesTickValue?|modifyFuturesPriceVarianceAllowed?|modifyPriceInversion?|modifyCouponRate?|modifyDaysInYear?|modifyDaysInTerm?|modifyOptionsMinPriceFluctuation?|modifyOptionsTickBase?|modifyOptionsTickValue?|modifyOptionsPriceVarianceAllowed?|modifyContractValCalcMethod?|modifyNoOfYears?|modifyTermsPerYear?|saveAndConfirm?|closeDriver?|
+|ie     |1600x1024 |tomas|IE13            |0.02                      |2              |0.1001          |51                         |true          |0.01      |360       |35        |0.02                      |2              |0.1001          |101                        |TICK                 |4        |4           |true                             |true                  |true                   |true                              |true                 |true             |true             |true             |true                             |true                  |true                   |true                              |true                        |true            |true               |true           |true        |
+
+!|PricingAccordeonTest                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|browser|resolution|user|pricingAccordeon|futuresMinPriceFluctuation|futuresTickBase|futuresTickValue|futuresPriceVarianceAllowed|priceInversion|couponRate|daysInYear|daysInTerm|optionsMinPriceFluctuation|optionsTickBase|optionsTickValue|optionsPriceVarianceAllowed|contractValCalcMethod|noOfYears|termsPerYear|verifyFuturesMinPriceFluctuation?|verifyFuturesTickBase?|verifyFuturesTickValue?|verifyFuturesPriceVarianceAllowed?|verifyPriceInversion?|verifyCouponRate?|verifyDaysInYear?|verifyDaysInTerm?|verifyOptionsMinPriceFluctuation?|verifyOptionsTickBase?|verifyOptionsTickValue?|verifyOptionsPriceVarianceAllowed?|verifyContractValCalcMethod?|verifyNoOfYears?|verifyTermsPerYear?|authoriseChanges?|closeDriver?|
+|ie     |1366x768  |test|IE13            |0.02                      |2              |0.1001          |51                         |true          |0.01      |360       |35        |0.02                      |2              |0.1001          |101                        |TICK                 |4        |4           |true                             |true                  |true                   |true                              |true                 |true             |true             |true             |true                             |true                  |true                   |true                              |true                        |true            |true               |true             |true        |

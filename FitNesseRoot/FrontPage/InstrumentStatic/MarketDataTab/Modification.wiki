@@ -1,0 +1,14 @@
+---
+Help: Modifying Market Data tab elements
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\fitnesseautotests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| MarketDataTabTest                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+|browser|resolution|marketDataTab|index|futuresPriceScale|optionsPriceScale|strikePriceScale|futuresCodeFormat|optionsCodeFormat|strikeDecimals|strikeRounding|instrumentTypeCode|preferedFuturesPriceField|preferedOptionsPriceField|modifyFuturesPriceScale?|modifyOptionsPriceScale?|modifyStrikePriceScale?|modifyFuturesCodeFormat?|modifyOptionsCodeFormat?|modifyStrikeDecimals?|modifyStrikeRounding?|modifyInstrumentTypeCode?|modifyPreferedFuturesPriceField?|modifyPreferedOptionsPriceField?|saveAndConfirm?|closeWebDriver?|
+|chrome |1366x768  |0B           |0    |1                |1                |1               |FCF / tst        |FCF / tst        |1             |T- Truncate   |Curncy            |L- Last Trade Price      |L- Last Trade Price      |true                    |true                    |true                   |true                    |true                    |true                 |true                 |true                     |true                            |true                            |true           |true           |
+|chrome |1600x1024 |0B           |1    |1                |1                |1               |FCF / tst        |FCF / tst        |1             |T- Truncate   |MI                |L- Last Trade Price      |L- Last Trade Price      |true                    |true                    |true                   |true                    |true                    |true                 |true                 |true                     |true                            |true                            |true           |true           |

@@ -1,0 +1,31 @@
+---
+Test
+---
+'''SUMMARY:''' Test selecting adviser
+
+'''STEPS'''
+
+|Comment                                                                                  |
+|'''ID'''|'''TEST'''                                 |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Reporting / Advisers"|System displays advisers main screen|
+|2.      |Click Add new advisor icon                 |System displays new advisor screen  |
+|3.      |Fill all required fields                   |Pass                                |
+|4.      |Click Save button                          |Pass                                |
+|5.      |Return to main advisers page               |Pass                                |
+|5.      |Select created advisor                     |Pass                                |
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                           |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.advisorsscreen|
+
+'''TESTS'''
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue    |successMessage|selectedAdviserValue|advisorViewCodeValue|advisorValue |clickNewAdviserButton?|inputAdvisorCode?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|clickAdvisersBC?|selectAdvisor?|checkSelectedAdviser?|checkAdviserStatus?   |checkAdvisorCodeValue?|checkAdvisorNameValue?|closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ADV05           |Test adviser item 05|Adviser saved |ADV05               |ADV05               |ADV05        |true				    |true             |true             |true            |Adviser saved       |true            |true          |ADV05                |rgba(247, 148, 30, 1) |ADV05                 |Test adviser item 05  |true        |

@@ -1,0 +1,1 @@
+mvn -Dfitnesse.os.family=windows -Duser1.url=http://172.26.137.49/gcs-auto-test/tomas -Duser2.url=http://172.26.137.49/gcs-auto-test/test  -P fitnesse test

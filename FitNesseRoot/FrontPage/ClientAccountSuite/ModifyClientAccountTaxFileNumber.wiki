@@ -1,0 +1,14 @@
+---
+Help: Modifying Tax file number tab elements
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| ClientAccountTest                                                                                                                                                                                                                                                                                                                                                                                  |
+|browser|resolution|clientAccountPage|taxFileNumber|exemptionCode             |type   |companyName|surname|givenNames|initials|address|suburb|state|postcode|residencyCode|modifyTaxFileNumber?|modifyExemptionCode?|modifyType?|modifyCompanyName?|modifySurname?|modifyGivenNames?|modifyInitials?|modifyAddressTFN?|modifySuburb?|modifyState?|modifyPostcode?|modifyResidencyCode?|closeWebDriver?|
+|chrome |1600x1024 |TESTDS13         |12344321     |M - MACQUARIE BANK LIMITED|O-OTHER|Test Name  |TestSur|TestGiven |TestInit|LO     |ND    |VIC  |1111    |CHN - CHINA  |true                |true                |true       |true              |true          |true             |true           |true             |true         |true        |true           |true                |true           |
+|chrome |1366x768  |TESTDS13         |12344321     |M - MACQUARIE BANK LIMITED|O-OTHER|Test Name  |TestSur|TestGiven |TestInit|LO     |ND    |VIC  |1111    |CHN - CHINA  |true                |true                |true       |true              |true          |true             |true           |true             |true         |true        |true           |true                |true           |

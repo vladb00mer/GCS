@@ -1,0 +1,5 @@
+---
+Help: Test suite with automated tests for Google Chrome
+Suite
+---
+!contents -R1 -g -p -f -h

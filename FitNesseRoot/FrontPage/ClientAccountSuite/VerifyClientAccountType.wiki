@@ -1,0 +1,14 @@
+---
+Help: Verifying Master tab Account Type drop down elements
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| ClientAccountTest                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+|browser|resolution|clientAccountPage|clientType|clientSegregated|clientHoldingAccount|clientErrorAccount|clientOmnibusAccount|clientTradingAccount|clientAverageAccount|clientHedgerSpeculator|clientManualEntryAllowed|clientContraAccount|clientMarketMaker|clientRealClearAccount|verifyClientTypeDD?|verifyClientSegregated?|verifyClientHoldingAccount?|verifyClientErrorAccount?|verifyClientOmnibusAccount?|verifyClientTradingAccount?|verifyClientAverageAccount?|verifyClientHedgerSpeculator?|verifyClientManualEntryAllowed?|verifyContraAccount?|verifyClientMarketMaker?|verifyRealClearAccount?|closeWebDriver?|
+|chrome |1600x1024 |TESTDS13         |CLT       |true            |false               |false             |false               |true                |false               |Hedger                |true                    |false              |false            |false                 |true               |true                   |true                       |true                     |true                       |true                       |true                       |true                         |true                           |true                |true                    |true                   |true           |
+|chrome |1366x768  |TESTDS13         |CLT       |true            |false               |false             |false               |true                |false               |Hedger                |true                    |false              |false            |false                 |true               |true                   |true                       |true                     |true                       |true                       |true                       |true                         |true                           |true                |true                    |true                   |true           |

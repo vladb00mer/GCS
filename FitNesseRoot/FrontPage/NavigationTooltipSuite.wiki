@@ -1,0 +1,12 @@
+---
+Help: This is automated test suite for Navigation Tooltips
+---
+'''Main navigation menu tooltips verification test:''' http://localhost:4444/FrontPage.NavigationTooltipSuite.NavigationMainTooltips
+
+'''Static navigation submenu tooltips verification test:''' http://localhost:4444/FrontPage.NavigationTooltipSuite.NavigationStaticTooltips
+
+'''Positions navigation submenu tooltips verification test:''' http://localhost:4444/FrontPage.NavigationTooltipSuite.NavigationPositionsTooltips
+
+'''Extracts navigation submenu tooltips verification test:''' http://localhost:4444/FrontPage.NavigationTooltipSuite.NavigationExtractsTooltips
+
+'''ASX downloads from Extracts navigation submenu tooltips verification test:''' http://localhost:4444/FrontPage.NavigationTooltipSuite.NavigationASXDownloadFromExtractsTooltips

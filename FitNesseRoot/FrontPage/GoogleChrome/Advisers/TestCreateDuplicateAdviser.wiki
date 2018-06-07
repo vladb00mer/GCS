@@ -1,0 +1,27 @@
+'''SUMMARY:''' Test add duplicate adviser
+
+'''STEPS'''
+
+|Comment                                                                                  |
+|'''ID'''|'''TEST'''                                 |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Reporting / Advisers"|System displays advisers main screen|
+|2.      |Click Add new advisor icon                 |System displays new advisor screen  |
+|3.      |Fill all required fields                   |Pass                                |
+|4.      |Click Save button                          |Pass                                |
+|5.      |Verify expected result                     |Pass                                |
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                           |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.advisorsscreen|
+
+'''TESTS'''
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue |successMessage|selectedAdviserValue|advisorViewCodeValue|advisorValue |clickNewAdviserButton?|inputAdvisorCode?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|checkMessageDescription?                 |checkSelectedAdviser?|closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ENELON          |ENERGY LONDON    |Adviser saved |ENELON              |ENELON              |ENERGY LONDON|true				     |true             |true             |true            |Adviser saving error|Adviser with the same code already exists|Select adviser       |true        |

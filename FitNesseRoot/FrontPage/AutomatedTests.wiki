@@ -1,0 +1,7 @@
+---
+Help: This is Test Suite with all automated test suites
+Suite
+Suites: all
+---
+!1 Test suite X
+!contents -R2 -g -p -f -h

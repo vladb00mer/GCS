@@ -1,0 +1,14 @@
+---
+Help: Verification test for Positions navigation menu tooltips
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import               |
+|tests.navigationtooltip|
+
+!|PositionsItemTooltipTest                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+|browser|resolution|treeItem |positionWorkbench|newTrade|multipleTradeEntry|tradeBatchEnquiry|pendingTransactions|reverseSettlemens|reverseOptionAbEx|collateralWorkbench|optionExpiryLoad|closeoutImport|verifyPositionWorkbenchTooltip?|verifyNewTradeTooltip?|verifyMultipleTradeEntryTooltip?|verifyTradeBatchEnquiryTooltip?|verifyPendingTransactionsTooltip?|verifyReverseSettlemensTooltip?|verifyReverseOptionAbExTooltip?|verifyCollateralWorkbenchTooltip?|verifyOptionExpiryLoadTooltip?|verifyCloseoutImportTooltip?|closeWebDriver?|
+|chrome |1366x768  |positions|true             |true    |true              |true             |true               |true             |true             |false              |true            |true          |true                           |true                  |true                            |true                           |true                             |true                           |true                           |true                             |true                          |true                        |true           |
+|chrome |1600x1024 |positions|true             |true    |true              |true             |true               |true             |true             |false              |true            |true          |true                           |true                  |true                            |true                           |true                             |true                           |true                           |true                             |true                          |true                        |true           |

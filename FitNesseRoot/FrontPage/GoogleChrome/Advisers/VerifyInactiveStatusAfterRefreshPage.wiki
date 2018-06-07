@@ -1,0 +1,39 @@
+---
+Test
+---
+'''SUMMARY:''' Test inactive status for new adviser after refresh page
+
+'''STEPS'''
+
+|Comment                                                                                  |
+|'''ID'''|'''TEST'''                                 |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Reporting / Advisers"|System displays advisers main screen|
+|2.      |Click Add new advisor icon                 |System displays new advisor screen  |
+|3.      |Fill all required fields                   |Pass                                |
+|4.      |Click Save button                          |Pass                                |
+|5.      |Change iv-user                             |Pass                                |
+|6.      |Click Authorise button                     |Pass                                |
+|7.      |Click inactive action                      |Pass                                |
+|8.      |Refresh page                               |Pass                                |
+|9.      |Verify data                                |Pass                                |
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                           |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.advisorsscreen|
+
+'''TESTS'''
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue    |successMessage|selectedAdviserValue|advisorViewCodeValue|advisorValue        |clickNewAdviserButton?|inputAdvisorCode?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ADV11           |Test adviser item 11|Adviser saved |ADV11               |ADV11               |Test adviser item 11|true				   |true             |true             |true            |Adviser saved       |true        |
+
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorValue|advisorNameValue    |selectAdvisor?|clickAuthoriseBtn?|checkApproveMessage?|clickInactiveIcon?|checkSuccessMessage?|refreshPage?|checkSelectedAdviser?       |checkAdvisorCodeValue?|checkAdvisorNameValueView?|displayActiveIcon?|checkAdviserStatus?  |closeDriver?|
+|chrome |1600x1024 |test |				 	|ADV11       |Test adviser item 11|true          |true              |Adviser approved    |true              |Adviser saved       |true        |ADV11 - Test adviser item 11|ADV11                 |Test adviser item 11      |true              |rgba(247, 148, 30, 1)|true        |

@@ -1,0 +1,35 @@
+---
+Test
+---
+'''SUMMARY:''' Test is about Instrument Static Master tab Margin accordeon modification
+
+'''STEPS'''
+
+|Comment                                                                           |
+|'''ID'''|'''TEST'''                          |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Instrument"   |Instrument search page shown        |
+|2.      |Make any search                     |Search result table updated         |
+|3.      |Click on first table record link    |Instrument page Master tab is opened|
+|4.      |Modify all existing fields in Margin|Values are modified                 |
+|5.      |Navigate to "Static / Instrument"   |Instrument search page shown        |
+|6.      |Make any search                     |Search result table updated         |
+|7.      |Click on first table record link    |Instrument page Master tab is opened|
+|8.      |Verify all existing fields in Margin|Values are verified                 |
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                   |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen|
+
+'''TESTS'''
+
+!|MarginAccordeonTest                                                                                                                                                                                                                              |
+|browser|resolution|user |marginAccordeon|allowExcessCredit|realiseVmAtSettlement|isVariationMarginPart|setVmToZero|modifyAllowExcessCredit?|modifyIsVariationMarginPart?|modifyRealiseVmAtSettlement?|modifyVmToZero?|saveAndConfirm?|closeDriver?|
+|chrome |1600x1024 |tomas|QA70           |true             |true                 |true                 |true       |true                    |true                        |true                        |true           |true           |true        |
+
+!|MarginAccordeonTest                                                                                                                                                                                                                                                                                                    |
+|browser|resolution|user|marginAccordeon|initialMarginMethod|variationMarginMethod|allowExcessCredit|realiseVmAtSettlement|isVariationMarginPart|setVmToZero|verifyInitialMarginMethod?|verifyAllowExcessCredit?|verifyRealiseVmAtSettlement?|verifyIsVariationMarginPart?|verifyVmToZero?|authoriseChanges?|closeDriver?|
+|chrome |1366x768  |test|QA70           |SPAN               |SPAN                 |false            |true                 |true                 |true       |true                      |true                    |true                        |true                        |true           |true             |true        |

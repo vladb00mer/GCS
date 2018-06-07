@@ -1,0 +1,31 @@
+---
+Test
+---
+'''SUMMARY:''' Test reject new advisor by the same user
+
+'''STEPS'''
+
+|Comment                                                                                  |
+|'''ID'''|'''TEST'''                                 |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Reporting / Advisers"|System displays advisers main screen|
+|2.      |Click Add new advisor icon                 |System displays new advisor screen  |
+|3.      |Fill all required fields                   |Pass                                |
+|4.      |Click Save button                          |Pass                                |
+|5.      |Click Reject button                        |Pass                                |
+|5.      |Verify expected result                     |Pass                                |
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                           |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.advisorsscreen|
+
+'''TESTS'''
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue    |successMessage|rejectMessage |selectedAdviserValue|clickNewAdviserButton?|inputAdvisorCode?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|clickRejectBtn?|checkRejectMessage?|checkSelectedAdviser?|closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ADV04           |Test adviser item 04|Adviser saved |Adviser reject|Select adviser      |true			        |true             |true             |true            |Adviser saved       |true           |Adviser reject     |Select adviser       |true        |

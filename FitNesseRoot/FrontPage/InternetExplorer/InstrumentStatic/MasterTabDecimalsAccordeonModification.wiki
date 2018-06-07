@@ -1,0 +1,32 @@
+---
+Help: Instrument Static Master tab Decimals accordeon modification
+Test
+---
+'''SUMMARY:''' Test is about Instrument Static Master tab Instrument details accordeon modification
+
+'''STEPS'''
+
+|Comment                                                                             |
+|'''ID'''|'''TEST'''                            |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Instrument"     |Instrument search page shown        |
+|2.      |Make any search                       |Search result table updated         |
+|3.      |Click on first table record link      |Instrument page Master tab is opened|
+|4.      |Modify all existing fields in Decimals|Values are mdified                  |
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                   |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen|
+
+'''TESTS'''
+
+!|DecimalsAccordeonTest                                                                                                                                                                                                                                                                                                                                        |
+|browser|resolution|user |decimalsAccordeon|noDecimalsInPrice|noDecimalsForAveragePricing|noDecimalsInLotSize|tradeQuantityDecimals|extendedDecimalsForExchangeFeeRates|modifyDecimalsInPrice?|modifyDecimalsForAveragePricing?|modifyNoDecimalsInLotSize?|modifyTradeQuantityDecimals?|modifyExtendedDecimalsForExchangeFeeRates?|saveAndConfirm?|closeDriver?|
+|ie     |1600x1024 |tomas|IE09             |2                |2                          |3                  |4                    |5                                  |true                  |true                            |true                      |true                        |true                                      |true           |true        |
+
+!|DecimalsAccordeonTest                                                                                                                                                                                                                                                                                                                                         |
+|browser|resolution|user|decimalsAccordeon|noDecimalsInPrice|noDecimalsForAveragePricing|noDecimalsInLotSize|tradeQuantityDecimals|extendedDecimalsForExchangeFeeRates|verifyDecimalsInPrice?|verifyDecimalsForAveragePricing?|verifyNoDecimalsInLotSize?|verifyTradeQuantityDecimals?|verifyExtendedDecimalsForExchangeFeeRates?|authoriseChanges?|closeDriver?|
+|ie     |1366x768  |test|IE09             |2                |2                          |3                  |4                    |5                                  |true                  |true                            |true                      |true                        |true                                      |true             |true        |

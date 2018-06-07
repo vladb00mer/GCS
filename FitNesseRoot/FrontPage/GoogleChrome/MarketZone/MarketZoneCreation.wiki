@@ -1,0 +1,34 @@
+---
+Test
+---
+'''SUMMARY:''' Test is about new Market Zone creation
+
+'''STEPS'''
+
+|Comment                                                                         |
+|'''ID'''|'''TEST'''                        |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Market Zone"|Market Zone search page shown       |
+|2.      |Click "New Market Zone"           |New Market Zone creation form opened|
+|3.      |Fill required fieds and save      |Market Zone saved but not approved  |
+|4.      |Re-login with another user        |Another user logged in              |
+|5.      |Navigate to "Static / Market Zone"|Market Zone search page shown       |
+|6.      |Open created Market Zone          |"Authorize" button enabled          |
+|7.      |Click "Authorize" button          |Market Zone creation approved       |
+
+'''IMPORT:'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!| import                                  |
+|com.mbl.flowcs.gcs.tests.staticscreens.marketzonescreen|
+
+'''TESTS:'''
+
+!|MarketZoneMaintenanceTest                                                                                                     |
+|browser|resolution|user |code  |name      |openMarketZoneMaintenance?|clickAdd?|modifyCode?|modifyName?|clickSave?|closeDriver?|
+|chrome |1600x1024 |tomas|QAMZ03|QAMZ03Name|true                      |true     |true       |true       |true      |true        |
+
+!|MarketZoneMaintenanceTest                                                                                                |
+|browser|resolution|user|code  |name      |openMarketZoneMaintenance?|selectMarketZone?|verifyName?|authorise?|closeDriver?|
+|chrome |1366x768  |test|QAMZ03|QAMZ03Name|true                      |true             |true       |true      |true        |

@@ -1,0 +1,14 @@
+---
+Help: Verification test for Group Tooltip in Collateral Workbench search result table
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.common|
+
+!| TooltipTest                                                                                                                                                                                                                                                                                          |
+|browser|resolution|tooltipType|collateral|header                          |status|accountType|superGroup|firm|segregated|groupStatic|groupEnquiry|verifyHeader?|verifyStatus?|verifyAccountType?|verifySuperGroup?|verifyFirm?|verifySegregated?|verifyGroupStatic?|verifyGroupEnquiry?|closeWebDriver?|
+|chrome |1600x1024 |group      |test      |ALL STATEMENTS IN THIS GROUP ARE|CLOSED|Grouptype  |          |    |false     |           |            |true         |true         |true              |true             |true       |true             |true              |true               |true           |
+|chrome |1366x768  |group      |test      |ALL STATEMENTS IN THIS GROUP ARE|CLOSED|Grouptype  |          |    |false     |           |            |true         |true         |true              |true             |true       |true             |true              |true               |true           |

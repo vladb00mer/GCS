@@ -1,0 +1,30 @@
+---
+Test
+---
+'''SUMMARY:''' Test add new statement header
+
+'''STEPS'''
+
+|Comment                                                                                                   |
+|'''ID'''|'''TEST'''                                         |'''EXPECTED RESULT'''                        |
+|1.      |Navigate to "Static / Reporting / Statement Header"|System displays advisers main screen         |
+|2.      |Click Add new statement header icon                |System displays new statement header screen  |
+|3.      |Fill all required fields                           |Pass                                         |
+|4.      |Click Save button                                  |Pass                                         |
+|5.      |Verify data                                        |Pass                                         |
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                                  |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.clearingmanagersscreen|
+
+'''TESTS'''
+
+!|ClearingManagers|
+|browser|resolution|user |statementHeaderSearchPage|stHeaderValue|addressValue          |checkStHeaderTittle?        |checkStHeaderSelector? |checkNewStHeaderBtn?|clickNewStHeader?|inputStHeader?|inputAddress?|clickSaveButton?|checkSuccessMessage?  |checkStHeader?|checkAddress?         |checkStHeaderStatus? |closeDriver?|
+|chrome |1600x1024 |tomas|				           |ST1          |MACQUARIE BANK LIMITED|Statement header maintenance|Select statement header|true                |true             |true          |true         |true            |Statement header saved|ST1           |MACQUARIE BANK LIMITED|unauthorised         |true        |

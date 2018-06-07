@@ -1,0 +1,17 @@
+---
+Help: Client Account test
+---
+'''1. Verify Client Account fields'''
+
+'''Steps:'''
+
+ * Go to the UAT URL
+ * Login with a userID in the correct TAM group
+ * Go to Static / Menu Account tree item
+ * Put some actual value in Client Search field
+ * Click on first row in search result table
+
+'''Expected:'''
+
+ * Client Account page opened
+ * Client Account parameters (fields) are actual

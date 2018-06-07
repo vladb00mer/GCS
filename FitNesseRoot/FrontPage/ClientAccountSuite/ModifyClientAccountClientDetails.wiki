@@ -1,0 +1,14 @@
+---
+Help: Modifying Master tab Client details drop down elements
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| ClientAccountTest                                                                                                                           |
+|browser|resolution|clientAccountPage|clientGroupCode|clientCentralCustomerNumber|modifyGroupCode?|modifyCentralCustomerNumber?|closeWebDriver?|
+|chrome |1600x1024 |TESTDS13         |TESTDAN3       |00048777                   |true            |true                        |true           |
+|chrome |1366x768  |TESTDS13         |TESTDAN3       |00048777                   |true            |true                        |true           |

@@ -1,0 +1,14 @@
+---
+Help: Verifying header elements
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| ClientAccountTest                                                                                                                                |
+|browser|resolution|clientAccountPage|clientAccount|clientGroup|clientType|verifyClientAccount?|verifyClientGroup?|verifyClientType?|closeWebDriver?|
+|chrome |1600x1024 |testds13         |TESTDS13     |TESTDAN3   |CLT       |true                |true              |true             |true           |
+|chrome |1366x768  |testds13         |TESTDS13     |TESTDAN3   |CLT       |true                |true              |true             |true           |

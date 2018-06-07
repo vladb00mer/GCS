@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>GCS</groupId>
+    <artifactId>GCS-ui-tests</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <description>Module defining the back-end components.</description>
+    <name>GCS-ui-tests</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <java.version>1.8</java.version>
+        <org.slf4j>1.7.25</org.slf4j>
+        <ch.qos.logback>1.2.3</ch.qos.logback>
+        <dependency.org.fitnesse.version>20180127</dependency.org.fitnesse.version>
+        <dependency.selenium-java.version>3.11.0</dependency.selenium-java.version>
+        <dependency.org.apache.commons.version>3.6</dependency.org.apache.commons.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <fitnesse.os.family>windows</fitnesse.os.family>
+        <chrome.headless>false</chrome.headless>
+        <user1.url>http://127.0.0.1:8082</user1.url>
+        <user2.url>http://127.0.0.1:8083</user2.url>
+    </properties>
+    
+    <profiles>
+        <profile>
+            <id>fitnesse</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <artifactId>maven-antrun-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>start-fitnesse</id>
+                                <phase>test</phase>
+                                <configuration>
+                                    <tasks>
+                                        <echo taskname="fitnesse" message="Starting FitNesse..." />
+                                        <echo taskname="fitnesse" message="chrome headless: ${chrome.headless}" />
+                                        <echo taskname="fitnesse" message="fitnesse os family: ${fitnesse.os.family}" />
+                                        <java classname="fitnesseMain.FitNesseMain" classpathref="maven.runtime.classpath" fork="true" >
+                                            <env key="CHROME_HEADLESS" value="${chrome.headless}" />
+                                            <env key="FITNESSE_OS_FAMILY" value="${fitnesse.os.family}" />
+                                            <env key="USER1_URL" value="${user1.url}" />
+                                            <env key="USER2_URL" value="${user2.url}" />
+                                            <arg line="-p 4444" />
+                                            <arg line="-d ." />
+                                            <arg line="-v" />
+                                            <arg line="-l logs/" />
+                                        </java>
+                                    </tasks>
+                                </configuration>
+                                <goals>
+                                    <goal>run</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+    
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        
+        <!-- https://mvnrepository.com/artifact/org.fitnesse/fitnesse -->
+        <dependency>
+            <groupId>org.fitnesse</groupId>
+            <artifactId>fitnesse</artifactId>
+            <version>${dependency.org.fitnesse.version}</version>
+        </dependency>
+        
+        <!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>${dependency.selenium-java.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-api</artifactId>
+            <version>${dependency.selenium-java.version}</version>
+            <type>jar</type>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>${ch.qos.logback}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${org.slf4j}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>${dependency.org.apache.commons.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.16</version>
+            <scope>provided</scope>
+        </dependency>
+        
+    </dependencies>
+
+</project>

@@ -1,0 +1,43 @@
+---
+Test
+---
+'''SUMMARY:''' Test reject changes data in adviser
+
+'''STEPS'''
+
+|Comment                                                                                  |
+|'''ID'''|'''TEST'''                                 |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Reporting / Advisers"|System displays advisers main screen|
+|2.      |Click Add new advisor icon                 |System displays new advisor screen  |
+|3.      |Fill all required fields                   |Pass                                |
+|4.      |Click Save button                          |Pass                                |
+|5.      |Change iv-user                             |Pass                                |
+|6.      |Click Authorise button                     |Pass                                |
+|7.      |Change some data                           |Pass                                |
+|8.      |Click Save button                          |Pass                                |
+|9.      |Click Reject button                        |Pass                                |
+|10.     |Refresh Page                               |Pass                                |
+|10.     |Check original data                        |Pass                                |
+
+
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                           |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.advisorsscreen|
+
+'''TESTS'''
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue    |successMessage|selectedAdviserValue|advisorViewCodeValue|advisorValue        |clickNewAdviserButton?|inputAdvisorCode?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ADV24           |Test adviser item 24|Adviser saved |ADV24               |ADV24               |Test adviser item 24|true				   |true             |true             |true            |Adviser saved       |true        |
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorValue|advisorNameValue   |previousValue       |selectAdvisor?|clickAuthoriseBtn?|checkApproveMessage?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|checkPreviousValue?   |clickRejectBtn?|refreshPage?|checkSelectedAdviser?       |checkAdvisorCodeValue?|checkAdvisorNameValue?|checkAdviserStatus?  |closeDriver?|
+|chrome |1600x1024 |test |				 	|ADV24       |New adviser item 24|Test adviser item 24|true          |true              |Adviser approved    |true             |true            |Adviser saved       |(Test adviser item 24)|true           |true        |ADV24 - Test adviser item 24|ADV24                 |Test adviser item 24  |rgba(108, 194, 99, 1)|true        |
+

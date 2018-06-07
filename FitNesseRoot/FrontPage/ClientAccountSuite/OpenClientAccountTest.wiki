@@ -1,0 +1,13 @@
+---
+Help: This is Client Account page opening automated test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| ClientAccountTest                                                      |
+|browser|resolution|clientAccountPage|verifyClientAccount?|closeWebDriver?|
+|chrome |1600x1024 |test             |true                |true           |
+|chrome |1366x768  |test             |true                |true           |

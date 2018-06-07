@@ -1,0 +1,15 @@
+---
+Help: This is automated test suite for Instrument Static Master tab
+Suite
+---
+'''Instrument Static Master tab Instrument Details verification test:''' http://localhost:4444/FrontPage.InstrumentStatic.MasterTab.InstrumentDetailsVerification
+
+'''Instrument Static Master tab Instrument Details modification test:''' http://localhost:4444/FrontPage.InstrumentStatic.MasterTab.InstrumentDetailsModification
+
+'''Instrument Static Master tab Instrument Details verification test:''' http://localhost:4444/FrontPage.InstrumentStatic.MasterTab.ClosingDispositionOverridesVerification
+
+'''Instrument Static Master tab Instrument Details modification test:''' http://localhost:4444/FrontPage.InstrumentStatic.MasterTab.ClosingDispositionOverridesModification
+
+'''Instrument Static Master tab Instrument Details verification test:''' http://localhost:4444/FrontPage.InstrumentStatic.MasterTab.CascadingContractsVerification
+
+'''Instrument Static Master tab Instrument Details modification test:''' http://localhost:4444/FrontPage.InstrumentStatic.MasterTab.CascadingContractsModification

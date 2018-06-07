@@ -1,0 +1,33 @@
+---
+Test
+---
+'''SUMMARY:''' Test is about new Instrument Type creation
+
+'''STEPS'''
+
+|Comment                                                                               |
+|'''ID'''|'''TEST'''                           |'''EXPECTED RESULT'''                  |
+|1.      |Navigate to "Static/Instrument/Types"|Instrument Types page shown            |
+|2.      |Click "Add new row"                  |New Instrument Type creation row opened|
+|3.      |Fill required fieds and save         |Instrument Type saved but not approved |
+|4.      |Re-login with another user           |Another user logged in                 |
+|5.      |Navigate to "Static/Instrument/Types"|Instrument Types page shown            |
+|6.      |Click "Authorize" button             |Instrument Type creation approved      |
+
+'''IMPORT:'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!| import                                        |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen.types|
+
+'''TESTS:'''
+
+!|InstrumentTypesMaintenanceTest                                                                                                                                           |
+|browser|resolution|user |instrumentType|description|index|openInstrumentTypesMaintenance?|clickAddNewRow?|modifyInstrumentType?|modifyDescription?|clickSave?|closeDriver?|
+|ie |1600x1024 |tomas|QAT3          |QAT3Name   |0    |true                           |true           |true                 |true              |true      |true        |
+
+!|InstrumentTypesMaintenanceTest                                                                                                                          |
+|browser|resolution|user|instrumentType|description|index|openInstrumentTypesMaintenance?|verifyInstrumentType?|verifyDescription?|authorise?|closeDriver?|
+|ie |1366x768  |test|QAT3          |QAT3Name   |0    |true                           |true                 |true              |true      |true        |
