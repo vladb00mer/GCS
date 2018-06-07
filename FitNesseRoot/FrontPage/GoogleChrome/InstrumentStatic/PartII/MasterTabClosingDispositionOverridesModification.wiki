@@ -1,0 +1,31 @@
+---
+Test
+---
+'''SUMMARY:''' Test is about Instrument Static Master tab Closing disposition overrides accordeon modification
+
+'''STEPS'''
+
+|Comment                                                                                                |
+|'''ID'''|'''TEST'''                                               |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Instrument"                        |Instrument search page shown        |
+|2.      |Make any search                                          |Search result table updated         |
+|3.      |Click on first table record link                         |Instrument page Master tab is opened|
+|4.      |Modify Master tab Closing disposition overrides accordeon|Values are modified                 |
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                                |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen|
+
+'''TESTS'''
+
+!|ClosingDispositionOverridesAccordeonTest                                                                                                             |
+|browser|resolution|user |closingDispositionOverridesAccordeon|futures     |options         |modifyFutures?|modifyOptions?|saveAndConfirm?|closeDriver?|
+|chrome |1600x1024 |tomas|QA67                                |C - Closeout|B - Back to back|true          |true          |true           |true        |
+
+!|ClosingDispositionOverridesAccordeonTest                                                                                                              |
+|browser|resolution|user|closingDispositionOverridesAccordeon|futures     |options         |verifyFutures?|verifyOptions?|authoriseChanges?|closeDriver?|
+|chrome |1366x768  |test|QA67                                |C - Closeout|B - Back to back|true          |true          |true             |true        |

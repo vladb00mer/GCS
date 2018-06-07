@@ -1,0 +1,8 @@
+---
+Help: This is common test suite with all test cases
+---
+'''GCS Login Page (ITAM): '''http://localhost:4444/FrontPage.AuthenticationTests
+
+'''GCS Login Dashboard: '''http://localhost:4444/FrontPage.AuthorisationTests
+
+'''GCS Broker Account: '''http://localhost:4444/FrontPage.BrokerAccountTests

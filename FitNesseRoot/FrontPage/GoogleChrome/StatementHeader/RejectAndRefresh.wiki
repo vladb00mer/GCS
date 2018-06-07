@@ -1,0 +1,30 @@
+---
+Test
+---
+'''SUMMARY:''' Check data after reject new st header and refresh page
+
+'''STEPS'''
+
+|Comment                                                                                                   |
+|'''ID'''|'''TEST'''                                         |'''EXPECTED RESULT'''                        |
+|1.      |Navigate to "Static / Reporting / Statement Header"|System displays advisers main screen         |
+|2.      |Click Add new statement header icon                |System displays new statement header screen  |
+|3.      |Fill all required fields                           |Pass                                         |
+|4.      |Click Save button                                  |Pass                                         |
+|5.      |Click Reject button                                |Pass                                         |
+|6.      |Check data                                         |Pass                                         |
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                                  |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.statementheaderscreen|
+
+'''TESTS'''
+
+!|StatementHeader|
+|browser|resolution|user |statementHeaderSearchPage|stHeaderValue|addressValue          |clickNewStHeader?|inputStHeader?|inputAddress?|clickSaveButton?|checkSuccessMessage?  |clickRejectBtn?|checkRejectMessage?      |refreshPage?|checkStHeaderSelector? |checkNewStHeaderBtn?|closeDriver?|
+|chrome |1600x1024 |tomas|				           |ST6          |MACQUARIE BANK LIMITED|true             |true          |true         |true            |Statement header saved|true           |Statement header rejected|true        |Select statement header|true                |true        |

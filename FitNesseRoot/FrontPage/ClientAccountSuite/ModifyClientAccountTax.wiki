@@ -1,0 +1,14 @@
+---
+Help: Modifying Master tab Tax drop down elements
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| ClientAccountTest                                                                    |
+|browser|resolution|clientAccountPage|modifyAuResident?|modifyGstExempt?|closeWebDriver?|
+|chrome |1600x1024 |TESTDS13         |true             |true            |true           |
+|chrome |1366x768  |TESTDS13         |true             |true            |true           |

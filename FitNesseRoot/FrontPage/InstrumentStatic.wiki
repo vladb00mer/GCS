@@ -1,0 +1,7 @@
+---
+Help: This is automated test suite for Instrument Static
+Suite
+---
+'''Instrument Static Master tab verification test suite:''' http://localhost:4444/FrontPage.InstrumentStatic.MasterTab
+
+'''Instrument Static Master tab verification test suite:''' http://localhost:4444/FrontPage.InstrumentStatic.MarketDataTab

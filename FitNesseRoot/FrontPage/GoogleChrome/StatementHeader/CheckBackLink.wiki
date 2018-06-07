@@ -1,0 +1,32 @@
+---
+Test
+---
+'''SUMMARY:''' Check Bakc link in breadcrumbs
+
+'''STEPS'''
+
+|Comment                                                                                                   |
+|'''ID'''|'''TEST'''                                         |'''EXPECTED RESULT'''                        |
+|1.      |Navigate to "Static / Reporting / Statement Header"|System displays advisers main screen         |
+|2.      |Click Add new statement header icon                |System displays new statement header screen  |
+|3.      |Fill all required fields                           |Pass                                         |
+|4.      |Click Save button                                  |Pass                                         |
+|5.      |Click Add new statement header icon                |Pass                                         |
+|6.      |Click Back link in breadcrumbs                     |Pass                                         |
+|7.      |Check data in created statement header             |Pass                                         |
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                                  |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.statementheaderscreen|
+
+'''TESTS'''
+
+!|StatementHeader|
+|browser|resolution|user |statementHeaderSearchPage|stHeaderValue|addressValue          |clickNewStHeader?|inputStHeader?|inputAddress?|clickSaveButton?|checkSuccessMessage?  |clickNewStHeader?|clickBackLink?|checkStHeader?|checkAddress?         |checkStHeaderStatus?|closeDriver?|
+|chrome |1600x1024 |tomas|				           |ST4          |MACQUARIE BANK LIMITED|true             |true          |true         |true            |Statement header saved|true             |true          |ST4           |MACQUARIE BANK LIMITED|unauthorised        |true        |

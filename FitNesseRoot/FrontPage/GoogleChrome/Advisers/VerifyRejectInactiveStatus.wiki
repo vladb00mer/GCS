@@ -1,0 +1,44 @@
+---
+Test
+---
+'''SUMMARY:''' Test reject new adviser
+
+'''STEPS'''
+
+|Comment                                                                                  |
+|'''ID'''|'''TEST'''                                 |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Reporting / Advisers"|System displays advisers main screen|
+|2.      |Click Add new advisor icon                 |System displays new advisor screen  |
+|3.      |Fill all required fields                   |Pass                                |
+|4.      |Click Save button                          |Pass                                |
+|5.      |Change iv-user                             |Pass                                |
+|6.      |Click Authorise button                     |Pass                                |
+|7.      |Change iv-user to the first user           |Pass                                |
+|8.      |Click Inactive button                      |Pass                                |
+|8.      |Click Reject button                        |Pass                                |
+|9.      |Verify data                                |Pass                                |
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                           |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.advisorsscreen|
+
+'''TESTS'''
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue    |successMessage|selectedAdviserValue|advisorViewCodeValue|advisorValue        |clickNewAdviserButton?|inputAdvisorCode?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ADV13           |Test adviser item 13|Adviser saved |ADV13               |ADV13               |Test adviser item 13|true				   |true             |true             |true            |Adviser saved       |true        |
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorValue|advisorNameValue    |selectAdvisor?|clickAuthoriseBtn?|checkApproveMessage?|closeDriver?|
+|chrome |1600x1024 |test |				 	|ADV13       |Test adviser item 13|true          |true              |Adviser approved    |true        |
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue    |successMessage|selectedAdviserValue|advisorViewCodeValue|advisorValue|selectAdvisor?|clickInactiveIcon?|clickRejectBtn?|checkRejectMessage?|checkSelectedAdviser?       |checkAdvisorCodeValue?|checkAdvisorNameValue?|checkAdviserStatus?  |closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ADV13           |Test adviser item 13|Adviser saved |ADV13               |ADV13               |ADV13       |true          |true              |true           |Adviser rejected   |ADV13 - Test adviser item 13|ADV13                 |Test adviser item 13  |rgba(108, 194, 99, 1)|true        |
+

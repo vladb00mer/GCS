@@ -1,0 +1,36 @@
+---
+Test
+---
+'''SUMMARY:''' Test reject new advisor by the same user
+
+'''STEPS'''
+
+|Comment                                                                                  |
+|'''ID'''|'''TEST'''                                 |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Reporting / Advisers"|System displays advisers main screen|
+|2.      |Click Add new advisor icon                 |System displays new advisor screen  |
+|3.      |Fill all required fields                   |Pass                                |
+|4.      |Click Save button                          |Pass                                |
+|5.      |Change user                                |Pass                                |
+|5.      |Click Reject button                        |Pass                                |
+|6.      |Check screen items                         |Pass                                |
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                           |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.advisorsscreen|
+
+'''TESTS'''
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue    |successMessage|clickNewAdviserButton?|inputAdvisorCode?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ADV02           |Test adviser item 02|Adviser saved |true			        |true             |true             |true            |Adviser saved       |true        |
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorValue|advisorNameValue    |successMessage|selectAdvisor?|checkSelectedAdviser?|checkAdviserStatus?   |checkAdvisorCodeValue?|checkAdvisorNameValueView?|clickRejectBtn?|checkRejectMessage?|checkSelectedAdviser?|closeDriver?|
+|chrome |1600x1024 |test |				 	|ADV02       |Test adviser item 02|Adviser saved |true          |ADV02                |rgba(247, 148, 30, 1) |ADV02                 |Test adviser item 02      |true           |Adviser reject     |Select adviser       |true        |

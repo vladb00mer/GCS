@@ -1,0 +1,40 @@
+---
+Help: Test Instrument Static removing
+Test
+---
+'''SUMMARY:''' Test is about Instrument Static closing
+
+'''STEPS'''
+
+|Comment                                                                        |
+|'''ID'''|'''TEST'''                       |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Instrument"|Instrument search page shown        |
+|2.      |Make any search                  |Search result table updated         |
+|3.      |Click on first table record link |Instrument page Master tab is opened|
+|4.      |Click Close control              |See confirmation dialog             |
+|5.      |Confirm closing                  |Record closed                       |
+|6.      |Re-login with another user       |Success                             |
+|7.      |Search for removed record        |Search unsuccessful                 |
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                   |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen|
+
+'''TESTS'''
+
+!|CloseInstrumentStaticTest                                              |
+|browser|resolution|user |instrumentCode|closeInstrument?|closeWebDriver?|
+|ie     |1600x1024 |tomas|IE05          |true            |true           |
+
+!|CloseInstrumentStaticTest                                              |
+|browser|resolution|user|instrumentCode|authoriseChanges?|closeWebDriver?|
+|ie     |1600x1024 |test|IE05          |true             |true           |
+
+!|CloseInstrumentStaticTest                                                  |
+|browser|resolution|user|instrumentCode|checkInstrumentNotFound?|closeDriver?|
+|ie     |1366x768  |test|IE05          |true                    |true        |

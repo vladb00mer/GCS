@@ -1,0 +1,14 @@
+---
+Help: Verification test for main navigation menu tooltips
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import               |
+|tests.navigationtooltip|
+
+!|NavigationTreeTooltipTest                                                                                                                                                                                                                                                                                                             |
+|browser|resolution|treeItem|dashboard|statik|interfaces|positions|journals|enquiry|reports|extracts|eodEom|verifyDashboardTooltip?|verifyStaticTooltip?|verifyInterfacesTooltip?|verifyPositionsTooltip?|verifyJournalsTooltip?|verifyEnquiryTooltip?|verifyReportsTooltip?|verifyExtractsTooltip?|verifyEodEomTooltip?|closeWebDriver?|
+|chrome |1366x768  |main    |false    |false |true      |false    |true    |true   |true   |false   |true  |true                   |true                |true                    |true                   |true                  |true                 |true                 |true                  |true                |true           |
+|chrome |1600x1024 |main    |false    |false |true      |false    |true    |true   |true   |false   |true  |true                   |true                |true                    |true                   |true                  |true                 |true                 |true                  |true                |true           |

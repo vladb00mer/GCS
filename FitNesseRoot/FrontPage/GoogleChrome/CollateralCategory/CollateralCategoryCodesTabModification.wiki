@@ -1,0 +1,34 @@
+---
+Test
+---
+'''SUMMARY:''' Test is about new Collateral Codes tab modification
+
+'''STEPS'''
+ 
+|Comment                                                                                   |
+|'''ID'''|'''TEST'''                             |'''EXPECTED RESULT'''                    |
+|1.      |Navigate to "Static / Collateral"      |Collateral search page shown             |
+|2.      |Select Category, open Codes tab        |Collateral Category Codes tab form opened|
+|3.      |Fill all fieds with new values and save|Collateral saved but not approved        |
+|4.      |Re-login with another user             |Another user logged in                   |
+|5.      |Navigate to "Static / Collateral"      |Collateral search page shown             |
+|6.      |Open created Collateral                |"Authorize" button enabled               |
+|7.      |Click "Authorize" button               |Collateral creation approved             |
+
+'''IMPORT:'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!| import                                  |
+|com.mbl.flowcs.gcs.tests.staticscreens.collateralscreen|
+
+'''TESTS:'''
+
+!|CollateralCategoryTest                                                                                                                                                                                                                                                                                                                                                                           |
+|browser|resolution|user|categoryCode              |collateralCode|collateralCodeName|isin|cusip|priceSourceC|priceSourceCodeC|priceScale|openCollateralSearch?|openCategory?|openCodesTab?|addNewRow?|modifyCollateralCode?|modifyCollateralCodeName?|modifyCollateralIsin?|modifyCollateralCusip?|modifyPriceSourceCodesTab?|modifyPriceSourceCode?|modifyPriceScale|saveAndConfirm?|closeDriver?|
+|chrome |1600x1024 |test|bz-braziliangovernmentbond|BD            |US TREASURY BOND  |1   |2    |RAN         |3               |4         |true                 |true         |true         |true      |true                 |true                     |true                 |true                  |true                      |true                  |true            |true           |true        |
+ 
+!|CollateralCategoryTest                                                                                                                                                                                                                                                                                                                                                                    |
+|browser|resolution|user |categoryCode              |collateralCode|collateralCodeName|isin|cusip|priceSourceC|priceSourceCodeC|priceScale|openCollateralSearch?|openCategory?|openCodesTab?|verifyCollateralCode?|verifyCollateralCodeName?|verifyCollateralIsin?|verifyCollateralCusip?|verifyPriceSourceCodesTab?|verifyPriceSourceCode?|verifyPriceScale?|authoriseChanges?|closeDriver?|
+|chrome |1366x768  |tomas|bz-braziliangovernmentbond|BD            |US TREASURY BOND  |1   |2    |RAN         |3               |4         |true                 |true         |true         |true                 |true                     |true                 |true                  |true                      |true                  |true             |true             |true        |

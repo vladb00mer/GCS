@@ -1,0 +1,36 @@
+---
+Help: Test Instrument Static creation
+Test
+---
+'''SUMMARY:''' Test is about new Instrument Static creation with only required fields
+
+'''STEPS'''
+
+|Comment                                                                       |
+|'''ID'''|'''TEST'''                       |'''EXPECTED RESULT'''              |
+|1.      |Navigate to "Static / Instrument"|Instrument search page shown       |
+|2.      |Click "New Instrument"           |New Instrument creation form opened|
+|3.      |Fill required fieds and save     |Instrument saved but not approved  |
+|4.      |Re-login with another user       |Another user logged in             |
+|5.      |Navigate to "Static / Instrument"|Instrument search page shown       |
+|6.      |Search for created Instrument    |Created Instrument found           |
+|7.      |Open created Instrument          |"Authorize" button enabled         |
+|8.      |Click "Authorize" button         |Instrument creation approved       |
+
+'''IMPORT:'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!| import                                  |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen|
+
+'''TESTS:'''
+
+!|CreateInstrumentStaticTest                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+|browser|resolution|user|instrumentCode|name    |market   |lotSize|settlementCurrency|unitOfMeasure|underlyingFuturesInstrumentForOptions|combinedInstrumentCode|contractValCalcMethod|speculatorFull|speculatorInterMonth|speculatorIntraMonth|speculatorSpotRate|hedgerFull|hedgerInterMonth|hedgerIntraMonth|hedgerSpot|openNewInstrument?|modifyInstrumentCode?|modifyName?|modifyMarket?|modifyLotSize?|modifySettlementCurrency?|modifyUnitOfMeasure?|modifyUnderlyingFuturesInstrumentForOptions?|modifyCombinedInstrumentCode?|modifyContractValCalcMethod?|modifySpeculatorFull?|modifySpeculatorInterMonth?|modifySpeculatorIntraMonth?|modifySpeculatorSpotRate?|modifyHedgerFull?|modifyHedgerInterMonth?|modifyHedgerIntraMonth?|modifyHedgerSpot?|saveAndConfirm?|closeDriver?|
+|ie     |1600x1024 |test|IE00          |IE00Name|CMX - CMX|100    |USD               |ESP          |IE00                                 |IE00                  |TICK                 |12345         |12345               |12345               |12345             |12345     |12345           |12345           |12345     |true              |true                 |true       |true         |true          |true                     |true                |true                                        |true                         |true                        |true                 |true                       |true                       |                         |true             |true                   |true                   |true             |true           |true        |
+
+!|InstrumentDetailsAccordeonTest                                                   |
+|browser|resolution|user |instrumentDetailsAccordeon|authoriseChanges?|closeDriver?|
+|ie     |1366x768  |tomas|IE00                      |true             |true        |

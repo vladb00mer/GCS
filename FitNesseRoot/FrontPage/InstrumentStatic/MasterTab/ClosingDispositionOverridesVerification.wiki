@@ -1,0 +1,14 @@
+---
+Help: Verifying Master tab Closing Disposition Overrides drop down elements
+Test
+---
+!define TEST_SYSTEM {slim}
+!path .\target\GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+
+!| Import    |
+|tests.statik|
+
+!| ClosingDispositionOverridesAccordeonTest                                                                                         |
+|browser|resolution|closingDispositionOverridesAccordeon|futures       |options       |verifyFutures?|verifyOptions?|closeWebDriver?|
+|chrome |1366x768  |test                                |Select futures|Select options|true          |true          |true           |
+|chrome |1600x1024 |test                                |Select futures|Select options|true          |true          |true           |

@@ -1,0 +1,43 @@
+---
+Help: Instrument Static Code Sets tab modification
+Test
+---
+'''SUMMARY:''' Test is about Instrument Static Code Sets tab modification
+
+'''STEPS'''
+
+|Comment                                                                        |
+|'''ID'''|'''TEST'''                       |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Instrument"|Instrument search page shown        |
+|2.      |Make any search                  |Search result table updated         |
+|3.      |Click on first table record link |Instrument page Master tab is opened|
+|4.      |Modify Code Sets tab values      |Values are modified                 |
+|5.      |Re-login with another user       |Re-logined                          |
+|6.      |Find modified Instrument         |"Authorise" button enabled          |
+|7.      |Authorise changes                |Changes authorised                  |
+|8.      |Navigate to "Static / Instrument"|Instrument search page shown        |
+|9.      |Make any search                  |Search result table updated         |
+|10.     |Click on first table record link |Instrument page Master tab is opened|
+|11.     |Modify Code Sets tab values      |Values are modified                 |
+|12.     |Re-login with another user       |Re-logined                          |
+|13.     |Find modified Instrument         |"Authorise" button enabled          |
+|14.     |Authorise changes                |Changes authorised                  |
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                   |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen|
+
+'''TESTS'''
+
+!|CodeSetsTabTest                                                                                                                                                                                                                        |
+|browser|resolution|user |codeSetsTabPage|futures|options|futPriceScale|optPriceScale|strikePriceScale|index|modifyFutures?|modifyOptions?|modifyFutPriceScale?|modifyOptPriceScale?|modifyStrikePriceScale?|saveChanges?|closeWebDriver?|
+|ie     |1600x1024 |tomas|IE01           |123    |123    |123          |123          |123             |0    |true          |true          |true                |true                |true                   |true        |true           |
+
+!|CodeSetsTabTest                                                                                                                                                                                                                            |
+|browser|resolution|user|codeSetsTabPage|futures|options|futPriceScale|optPriceScale|strikePriceScale|index|verifyFutures?|verifyOptions?|verifyFutPriceScale?|verifyOptPriceScale?|verifyStrikePriceScale?|authoriseChanges?|closeWebDriver?|
+|ie     |1366x768  |test|IE01           |123    |123    |123          |123          |123             |0    |true          |true          |true                |true                |true                   |true             |true           |

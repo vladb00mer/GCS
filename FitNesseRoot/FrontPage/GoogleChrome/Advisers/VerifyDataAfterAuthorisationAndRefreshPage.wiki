@@ -1,0 +1,48 @@
+---
+Test
+---
+'''SUMMARY:''' Verify display data after authorisation and refresh page
+
+'''STEPS'''
+
+|Comment                                                                                  |
+|'''ID'''|'''TEST'''                                 |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Reporting / Advisers"|System displays advisers main screen|
+|2.      |Click Add new advisor icon                 |System displays new advisor screen  |
+|3.      |Fill all required fields                   |Pass                                |
+|4.      |Click Save button                          |Pass                                |
+|5.      |Change iv-user                             |Pass                                |
+|6.      |Click Authorise button                     |Pass                                |
+|7.      |Change some data                           |Pass                                |
+|8.      |Click Save button                          |Pass                                |
+|9.      |Change iv-user                             |Pass                                |
+|10.     |Click Authorise button                     |Pass                                |
+|11.     |Refresh page                               |Pass                                |
+|12.     |Check data                                 |Pass                                |
+
+
+
+
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                           |
+|com.mbl.flowcs.gcs.tests.staticscreens.reportingscreens.advisorsscreen|
+
+'''TESTS'''
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue    |successMessage|selectedAdviserValue|advisorViewCodeValue|advisorValue        |clickNewAdviserButton?|inputAdvisorCode?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ADV27           |Test adviser item 27|Adviser saved |ADV27               |ADV27               |Test adviser item 27|true				   |true             |true             |true            |Adviser saved       |true        |
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorValue|advisorNameValue   |previousValue       |selectAdvisor?|clickAuthoriseBtn?|checkApproveMessage?|inputAdvisorName?|clickSaveButton?|checkSuccessMessage?|closeDriver?|
+|chrome |1600x1024 |test |				 	|ADV27       |New adviser item 27|Test adviser item 27|true          |true              |Adviser approved    |true             |true            |Adviser saved       |true        |
+
+
+!|AddNewAdvisor|
+|browser|resolution|user |advisorsSearchPage|advisorCodeValue|advisorNameValue    |successMessage|selectedAdviserValue|advisorViewCodeValue|advisorValue |selectAdvisor?|clickAuthoriseBtn?|checkApproveMessage?|refreshPage?|checkSelectedAdviser?      |checkAdvisorCodeValue?|checkAdvisorNameValue?|checkAdviserStatus?  |closeDriver?|
+|chrome |1600x1024 |tomas|				 	|ADV27           |Test adviser item 27|Adviser saved |ADV27               |ADV27               |ADV27        |true		    |true              |Adviser approved    |true        |ADV27 - New adviser item 27|ADV27                 |New adviser item 27   |rgba(108, 194, 99, 1)|true        |

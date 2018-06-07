@@ -1,0 +1,10 @@
+---
+Help: This is automated test suite for Tooltips
+---
+'''Group Tooltip in Client Account search result table verification test:''' http://localhost:4444/FrontPage.TooltipSuite.ClientAccountGroupTooltip
+
+'''Super Group Tooltip in Collateral Workbench search result table verification test:''' http://localhost:4444/FrontPage.TooltipSuite.CollateralWorkbenchSuperGroupTooltip
+
+'''Group Tooltip in Collateral Workbench search result table verification test:''' http://localhost:4444/FrontPage.TooltipSuite.CollateralWorkbenchGroupTooltip
+
+'''Account Tooltip in Collateral Workbench search result table verification test:''' http://localhost:4444/FrontPage.TooltipSuite.CollateralWorkbenchAccountTooltip

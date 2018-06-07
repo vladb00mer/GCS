@@ -1,0 +1,34 @@
+---
+Test
+---
+'''SUMMARY:''' Test is about new Collateral Category creation
+
+'''STEPS'''
+
+|Comment                                                                       |
+|'''ID'''|'''TEST'''                       |'''EXPECTED RESULT'''              |
+|1.      |Navigate to "Static / Collateral"|Collateral search page shown       |
+|2.      |Click "New Category"             |New Collateral creation form opened|
+|3.      |Fill required fieds and save     |Collateral saved but not approved  |
+|4.      |Re-login with another user       |Another user logged in             |
+|5.      |Navigate to "Static / Collateral"|Collateral search page shown       |
+|6.      |Open created Collateral          |"Authorize" button enabled         |
+|7.      |Click "Authorize" button         |Collateral creation approved       |
+
+'''IMPORT:'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!| import                                  |
+|com.mbl.flowcs.gcs.tests.staticscreens.collateralscreen|
+
+'''TESTS:'''
+
+!|CollateralCategoryTest                                                                                                                                                                         |
+|browser|resolution|user|categoryCode|categoryName|clientHaircut|openCollateralSearch?|createCategory?|modifyCategoryCode?|modifyCategoryName?|modifyClientHaircut?|saveAndConfirm?|closeDriver?|
+|ie |1600x1024 |test|Q1          |QACC01Name  |1            |true                 |true           |true               |true               |true                |true           |true        |
+
+!|CollateralCategoryTest                                                                                                                                                                        |
+|browser|resolution|user|categoryCode|categoryName|clientHaircut|openCollateralSearch?|openCategory?|verifyCategoryCode?|verifyCategoryName?|verifyClientHaircut?|authoriseChanges?|closeDriver?|
+|ie |1366x768  |tomas|Q1          |QACC01Name  |1            |true                 |true         |true               |true               |true                |true             |true        |

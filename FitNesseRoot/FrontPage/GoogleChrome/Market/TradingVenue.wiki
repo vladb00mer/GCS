@@ -1,0 +1,29 @@
+---
+Test
+---
+'''SUMMARY:''' Test Trading Venue
+
+'''STEPS'''
+
+|Comment                                  |
+|'''ID'''|'''TEST'''|'''EXPECTED RESULT'''|
+|1.      |TODO      |TODO                 |
+
+
+'''IMPORT:'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!| import                              |
+|com.mbl.flowcs.gcs.tests.statik.market|
+
+'''TESTS:'''
+
+!|TradingVenuesTest                                                                                                            |
+|browser|resolution|user |venueKey|CreateNewTradingVenue?|isStatusUnauthorized?|isVenueKeyEqual?|isVenueNameEqual?|closeDriver?|
+|chrome |1600x1024 |tomas|Q1      |/__VOID__/            |true                 |true            |true             |true        |
+
+!|TradingVenuesTest                                                                                        |
+|browser|resolution|user |venueKey|OpenTradingVenue?|rejectTradingVenue?|closeDriver?|
+|chrome |1600x1024 |tomas|Q1      |/__VOID__/       |/__VOID__/         |true        |

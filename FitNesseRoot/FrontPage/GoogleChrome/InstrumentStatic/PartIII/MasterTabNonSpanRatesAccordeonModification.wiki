@@ -1,0 +1,35 @@
+---
+Test
+---
+'''SUMMARY:''' Test is about Instrument Static Master tab Non-SPAN Rates accordeon verification
+
+'''STEPS'''
+
+|Comment                                                                                   |
+|'''ID'''|'''TEST'''                                  |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Instrument"           |Instrument search page shown        |
+|2.      |Make any search                             |Search result table updated         |
+|3.      |Click on first table record link            |Instrument page Master tab is opened|
+|4.      |Modify all existing fields in Non-SPAN Rates|Values are modified                 |
+|5.      |Navigate to "Static / Instrument"           |Instrument search page shown        |
+|6.      |Make any search                             |Search result table updated         |
+|7.      |Click on first table record link            |Instrument page Master tab is opened|
+|8.      |Verify all existing fields in Non-SPAN Rates|Values are verified                 |
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                   |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen|
+
+'''TESTS'''
+
+!|NonSpanRatesAccordeonTest                                                                                                                                                                                                                                                                                                                                                                                 |
+|browser|resolution|user |nonSpanRatesAccordeon|speculatorFull|speculatorInterMonth|speculatorIntraMonth|speculatorSpotRate|hedgerFull|hedgerInterMonth|hedgerIntraMonth|hedgerSpot|modifySpeculatorFull?|modifySpeculatorInterMonth?|modifySpeculatorIntraMonth?|modifySpeculatorSpotRate?|modifyHedgerFull?|modifyHedgerInterMonth?|modifyHedgerIntraMonth?|modifyHedgerSpot?|saveAndConfirm?|closeDriver?|
+|chrome |1600x1024 |test|QA71                 |2             |2                   |2                   |2                 |2         |2               |2               |2         |true                 |true                       |true                       |true                     |true             |true                   |true                   |true             |true           |true        |
+
+!|NonSpanRatesAccordeonTest                                                                                                                                                                                                                                                                                                                                                                                   |
+|browser|resolution|user |nonSpanRatesAccordeon|speculatorFull|speculatorInterMonth|speculatorIntraMonth|speculatorSpotRate|hedgerFull|hedgerInterMonth|hedgerIntraMonth|hedgerSpot|verifySpeculatorFull?|verifySpeculatorInterMonth?|verifySpeculatorIntraMonth?|verifySpeculatorSpotRate?|verifyHedgerFull?|verifyHedgerInterMonth?|verifyHedgerIntraMonth?|verifyHedgerSpot?|authoriseChanges?|closeDriver?|
+|chrome |1366x768  |tomas|QA71                 |2             |2                   |2                   |2                 |2         |2               |2               |2         |true                 |true                       |true                       |true                     |true             |true                   |true                   |true             |true             |true        |

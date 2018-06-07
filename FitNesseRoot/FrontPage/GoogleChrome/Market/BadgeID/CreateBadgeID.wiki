@@ -1,0 +1,25 @@
+---
+Test
+---
+'''SUMMARY:''' Test Bade ID
+
+'''STEPS'''
+
+|Comment                                  |
+|'''ID'''|'''TEST'''|'''EXPECTED RESULT'''|
+|1.      |TODO      |TODO                 |
+
+
+'''IMPORT:'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!| import                              |
+|com.mbl.flowcs.gcs.tests.statik.market|
+
+'''TESTS:'''
+
+!|BadgeIdTest                                      									  											 |
+|browser|resolution|user |badgeIdKey|CreateBadgeId?|isStatusUnauthorized?|isBadgeIdEqual?|isBadgeIdDescriptionEqual?|closeDriver?|
+|chrome |1600x1024 |tomas|Q1        |/__VOID__/    |true        		 |true           |true        				|true        |

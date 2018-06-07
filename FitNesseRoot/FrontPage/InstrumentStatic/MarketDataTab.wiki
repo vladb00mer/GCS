@@ -1,0 +1,7 @@
+---
+Help: This is automated test suite for Instrument Static Market Data tab
+Suite
+---
+'''Instrument Static Market Data tab modification test:''' http://localhost:4444/FrontPage.InstrumentStatic.MarketDataTab.Modification
+
+'''Instrument Static Market Data tab verification test:''' http://localhost:4444/FrontPage.InstrumentStatic.MarketDataTab.Verification

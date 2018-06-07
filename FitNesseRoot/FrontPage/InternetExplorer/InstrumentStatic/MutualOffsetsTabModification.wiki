@@ -1,0 +1,34 @@
+---
+Help: Instrument Static Mutual Offsets tab modification
+Test
+---
+'''SUMMARY:''' Test is about Instrument Static Mutual Offsets tab modification
+
+'''STEPS'''
+|Comment                                                                        |
+|'''ID'''|'''TEST'''                       |'''EXPECTED RESULT'''               |
+|1.      |Navigate to "Static / Instrument"|Instrument search page shown        |
+|2.      |Make any search                  |Search result table updated         |
+|3.      |Click on first table record link |Instrument page Master tab is opened|
+|4.      |Modify Mutual Offsets tab values |Values are modified                 |
+|5.      |Re-login with another user       |Re-logined                          |
+|6.      |Find modified Instrument         |"Authorise" button enabled          |
+|7.      |Authorise changes                |Changes authorised                  |
+
+'''IMPORT'''
+
+!path ./target/GCS-ui-tests-1.0.0-SNAPSHOT-jar-with-dependencies.jar
+!define TEST_SYSTEM {slim}
+
+!|import                                   |
+|com.mbl.flowcs.gcs.tests.staticscreens.instrumentscreen|
+
+'''TESTS'''
+
+!|MutualOffsetsTabTest                                                                                                                                                                                                           |
+|browser|resolution|user |mutualOffsetsTab|executedInstrument|clearedInstrument|conversionRatio1|conversionRatio2|beginCreation?|modifyClearedInstrument?|modifyConversionRatio1?|modifyConversionRatio2?|clickSave?|closeDriver?|
+|ie     |1600x1024 |tomas|IE15            |IE15              |IE15             |1               |2               |true          |true                    |true                   |true                   |true      |true        |
+
+!|MutualOffsetsTabTest                                                                                                                                                                                                  |
+|browser|resolution|user|mutualOffsetsTab|executedInstrument|clearedInstrument|conversionRatio1|conversionRatio2|verifyClearedInstrument?|verifyConversionRatio1?|verifyConversionRatio2?|authoriseChanges?|closeDriver?|
+|ie     |1366x768  |test|IE15            |IE15              |IE15             |1               |2               |true                    |true                   |true                   |true             |true        |
